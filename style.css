@@ -1,0 +1,118 @@
+body{
+    background-color: rgb(254, 254, 156);
+    margin: 0;
+    padding: 0;
+}
+
+.sprite {
+    width: 37px; /* Ancho de un solo fotograma */
+    height: 80px; /* Altura de un solo fotograma */
+    background-image: url('Sprite-0001.png'); /* Ruta a la hoja de sprites */
+    background-repeat: no-repeat;
+    animation: play 0.5s steps(4) infinite; /* 1s = duración, steps(4) = número de fotogramas */
+    transform-origin: bottom;
+    transform: scale(2);
+    image-rendering: pixelated;
+    align-self: flex-end;
+}
+
+.sprite2 {
+    width: 42px; /* Ancho de un solo fotograma */
+    height: 80px; /* Altura de un solo fotograma */
+    background-image: url('Sprite-0003.png'); /* Ruta a la hoja de sprites */
+    background-repeat: no-repeat;
+    animation: play2 0.5s steps(4) infinite; /* 1s = duración, steps(4) = número de fotogramas */
+    transform: scale(2);
+    image-rendering: pixelated;
+    align-self: flex-end;
+    transform-origin: center;
+}
+
+.flip{
+    transform: scale(2) rotate(180deg);
+    align-self: flex-start;
+}
+
+.sprite:hover{
+    background-image: url("Sprite-0002.png");
+}
+
+.sprite2:hover{
+    background-image: url("Sprite-0004.png");
+}
+
+#Quack{
+    width: 35%;
+    height: 9%;
+    border: 0;
+    border-radius: 15px;
+    color: rgb(130, 130, 255);
+    background-color: rgb(255, 208, 208);
+    font-size: 30px;
+    font-family: "Press start 2P";
+    box-shadow: -13px 11px 10px -1px rgba(135,135,135,0.9);
+    transition: background-color 0.15s,
+                color 0.15s,
+                box-shadow 0.15s;
+}
+
+#Quack:hover{
+    background-color: rgb(250, 255, 195);
+    color: rgb(255, 186, 186);
+    box-shadow: -13px 1px 5px -1px rgba(135,135,135,0.9);
+}
+
+
+.container{
+    height: 50%;
+    width: 50%;
+    display: flex;
+    margin: 2%;
+    padding: 5%;
+    justify-content: space-evenly;
+}
+
+.padre{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titulo{
+    width: 125px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-image: url(Titulo.png);
+    transform: scale(4);
+    image-rendering: pixelated;
+    animation: grow 2s  infinite alternate;
+    transition: background-image 0.15s;
+}
+
+.titulo:hover{
+    background-image: url(Titulo2.png);
+}
+
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@keyframes grow{
+    from {transform: scale(3);}
+    to {transform: sclare(3.1);}
+}
+
+@keyframes play {
+    from { background-position: 0 0; }
+    to { background-position: -148px 0; } /* Ajusta -400px porque el ancho total de la hoja es 400px (4 fotogramas de 100px cada uno) */
+}
+
+@keyframes play2 {
+    from { background-position: 0 0; }
+    to { background-position: -168px 0; } /* Ajusta -400px porque el ancho total de la hoja es 400px (4 fotogramas de 100px cada uno) */
+}
